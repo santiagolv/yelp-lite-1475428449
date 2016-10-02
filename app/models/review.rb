@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_many   :review_replies,
+             :dependent => :destroy
+
   has_many   :photo_reviews,
              :dependent => :destroy
 
