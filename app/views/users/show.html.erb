@@ -26,3 +26,83 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @user.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.content %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tags
+      </li>
+
+      <% @user.tags.each do |restaurant_tag| %>
+        <li class="list-group-item">
+          <a href="/restaurant_tags/<%= restaurant_tag.id %>">
+            <%= restaurant_tag.restaurant_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many restaurant_ownerships -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant_ownerships
+      </li>
+
+      <% @user.restaurant_ownerships.each do |restaurant_ownership| %>
+        <li class="list-group-item">
+          <a href="/restaurant_ownerships/<%= restaurant_ownership.id %>">
+            <%= restaurant_ownership.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many review_replies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Review_replies
+      </li>
+
+      <% @user.review_replies.each do |review_reply| %>
+        <li class="list-group-item">
+          <a href="/review_replies/<%= review_reply.id %>">
+            <%= review_reply.reply_content %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
